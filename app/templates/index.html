@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Test</title>
+</head>
+<body>
+Yo Yo Yo<br>
+{% for i in blog %}
+    {{ i['_id'] }}<br>
+    {{ i['body'] }} {{ i['author'] }}<br>
+    {{ i['permalink'] }} {{ i['title'] }}<br>
+    {{ i['date'] }}<br> {{ i['comments'] }}<br> {{ i['tags'] }}<br><br><br>
+{% endfor %}<br><br>
+{% for c in gwages %}
+    (id: {{ c['id'] }}), (name: {{ c['name'] }}), (desktop results: {{ c['results_desktop'] }}), (mobile results: {{ c['results_mobile'] }})<br>
+    
+    <h2>Mobile</h2>
+    {% for i in c['mobile'] %}
+        {% if i['Type'] != 'Html Mailers' %}
+            casino: {{ i['Casino'] }}<br>
+            name: {{ i['Name'] }}<br>
+            size: {{ i['Size'] }}<br>
+            links: {{ i['Code/Link'] }}<br> 
+            type: {{ i['Type'] }}<br><br>
+        {% endif %}
+    {% endfor %}
+    <br>{{ c['mobile'] }}<br><br>
+{% endfor %}
+</body>
+</html>
